@@ -1,0 +1,23 @@
+<div class="default-home">
+  <h1>{{title}}</h1>
+  <hr>
+  <button type="button" class="btn btn-primary" (click)="addToArray()">Display Details</button>
+  <button type="button" class="btn btn-primary" (click)="addToArray2()">Display Details Index</button>
+  <hr>
+  <!-- Here css class 'success' is enabled or disabled based on condition and the css class 'success' defination is written in .css file -->
+  <p *ngIf="randomBoolean" [ngStyle] = "{backgroundColor:getColor()}" [ngClass] ="{success:randomBoolean}"> You Won !!</p> 
+  <p *ngIf="!randomBoolean" [ngStyle] = "{backgroundColor:getColor()}" [ngClass] ="{success:randomBoolean}"> You Lost !!</p>
+  <hr>
+  <ul class="list-group">
+    <li class="list-group-item" 
+    *ngFor="let call of totalCalls" 
+    [ngStyle] = "{backgroundColor: call > 5 ? 'blue' : 'transparent'}">{{call}}</li>
+  </ul>
+  <hr>
+  <ul class="list-group">
+    <li class="list-group-item" 
+    *ngFor="let date of dateArray; let i = index" 
+    [ngStyle] = "{backgroundColor: i >= 5 ? 'blue' : 'transparent'}">{{date}}</li>
+  </ul>
+
+</div>
