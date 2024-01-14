@@ -6,3 +6,12 @@
     <app-server-element *ngFor="let serverElement of serverElements" [element]="serverElement"></app-server-element>
   </div>
 </div>
+
+
+<!-- Here,
+(serverCreated) is coming from child (app-cockpit) to parent (app) and data is in serverData, 
+So @output emitter in child (app-cockpit) and emit method in child.ts
+
+In second case,
+element data going from parent(app) to child (app-server-element), so @Input in child.ts 
+and same element is used in child UI -->
